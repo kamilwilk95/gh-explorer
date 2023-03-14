@@ -1,25 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
+import { FC } from 'react';
 import './App.css';
+import { Grid } from '@mui/material';
+import { SearchBox } from './components/searchBox/searchBox';
+import { UsersList } from './components/usersList/usersList';
 
-function App() {
+const App: FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grid container spacing={2}>
+      <Grid item xs={12} md={4} lg={3}>
+        <SearchBox />
+      </Grid>
+      <Grid item xs={12} md={8} lg={9}>
+        <UsersList />
+      </Grid>
+    </Grid>
   );
 }
 
